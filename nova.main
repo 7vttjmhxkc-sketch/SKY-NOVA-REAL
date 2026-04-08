@@ -1,38 +1,4 @@
--- SRY NOVA INITIALISIERUNG --
-
-local function wait(seconds)
-    local start = os.clock()
-    while os.clock() - start < seconds do end
-end
-
-local function start_loading()
-    local name = "SKY NOVA"
-    local bar_width = 25
-    
-    print("\n===========================================")
-    print("       SYSTEM INITIALIZATION: " .. name)
-    print("===========================================\n")
-
-    for i = 0, bar_width do
-        local percent = math.floor((i / bar_width) * 100)
-        local bar = string.rep("█", i) .. string.rep("-", bar_width - i)
-        
-        -- Benutze io.write für das Update in der selben Zeile
-        io.write("\r Lade: [" .. bar .. "] " .. percent .. "% ")
-        io.flush()
-        
-        wait(0.05) -- Hier wird gewartet
-    end
-
-    print("\n\n [SUCCESS] " .. name .. " ist jetzt bereit.")
-    print("-------------------------------------------\n")
-end
-
--- Hier wird der Ladebildschirm aufgerufen
-start_loading()
-
--- AB HIER GEHT DEIN EIGENTLICHES SKRIPT WEITER --
-print("Skript wird gestartet...")-- [[ SKY NOVA - ONLY LOADER ]]
+-- [[ SKY NOVA - ONLY LOADER ]]
 
 -- Verhindert Mehrfachausführung
 if _G.SkyNovaLoading then return end
