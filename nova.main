@@ -66,7 +66,14 @@ local function StartAnimation()
 end
 
 -- Start
-StartAnimation()-- [[ SKY NOVA PROTECTION ]]
+StartAnimation()-- Sofortige Rückmeldung, da das Skript groß ist
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "SKY NOVA - EARLY ACCESS",
+    Text = "Großes Update wird geladen... bitte warten!",
+    Duration = 10 -- Länger anzeigen, da viel geladen wird
+})
+
+-- Jetzt startet dein großer Loading Screen und die neuen Features-- [[ SKY NOVA PROTECTION ]]
 local creator = "7vttjmhxkc-sketch"
 local version = "1.0.0"
 
