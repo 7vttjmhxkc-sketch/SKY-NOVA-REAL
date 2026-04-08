@@ -1,4 +1,38 @@
--- [[ SKY NOVA - ONLY LOADER ]]
+-- SRY NOVA INITIALISIERUNG --
+
+local function wait(seconds)
+    local start = os.clock()
+    while os.clock() - start < seconds do end
+end
+
+local function start_loading()
+    local name = "SKY NOVA"
+    local bar_width = 25
+    
+    print("\n===========================================")
+    print("       SYSTEM INITIALIZATION: " .. name)
+    print("===========================================\n")
+
+    for i = 0, bar_width do
+        local percent = math.floor((i / bar_width) * 100)
+        local bar = string.rep("█", i) .. string.rep("-", bar_width - i)
+        
+        -- Benutze io.write für das Update in der selben Zeile
+        io.write("\r Lade: [" .. bar .. "] " .. percent .. "% ")
+        io.flush()
+        
+        wait(0.05) -- Hier wird gewartet
+    end
+
+    print("\n\n [SUCCESS] " .. name .. " ist jetzt bereit.")
+    print("-------------------------------------------\n")
+end
+
+-- Hier wird der Ladebildschirm aufgerufen
+start_loading()
+
+-- AB HIER GEHT DEIN EIGENTLICHES SKRIPT WEITER --
+print("Skript wird gestartet...")-- [[ SKY NOVA - ONLY LOADER ]]
 
 -- Verhindert Mehrfachausführung
 if _G.SkyNovaLoading then return end
@@ -66,14 +100,7 @@ local function StartAnimation()
 end
 
 -- Start
-StartAnimation()-- Sofortige Rückmeldung, da das Skript groß ist
-game:GetService("StarterGui"):SetCore("SendNotification", {
-    Title = "SKY NOVA - MAIN SCRIPT",
-    Text = "Großes Update wird geladen... bitte warten!",
-    Duration = 10 -- Länger anzeigen, da viel geladen wird
-})
-
--- Jetzt startet dein großer Loading Screen und die neuen Features-- [[ SKY NOVA PROTECTION ]]
+StartAnimation()-- [[ SKY NOVA PROTECTION ]]
 local creator = "7vttjmhxkc-sketch"
 local version = "1.0.0"
 
@@ -151,7 +178,14 @@ local function getDefaultConfig()
                 SkyboxRt = "rbxassetid://99525277797873",
                 SkyboxUp = "rbxassetid://125425274451894"
             },
-            
+            ["galaxy"] = {
+                SkyboxBk = "rbxassetid://159454299",
+                SkyboxDn = "rbxassetid://159454296",
+                SkyboxFt = "rbxassetid://159454293",
+                SkyboxLf = "rbxassetid://159454286",
+                SkyboxRt = "rbxassetid://159454300",
+                SkyboxUp = "rbxassetid://159454288"
+            },
         },
         WeaponSkins = {
             Blood = { primary = "rbxassetid://122271132142798", secondary = "rbxassetid://87911546375139" },
@@ -159,14 +193,16 @@ local function getDefaultConfig()
             Galaxy = { primary = "rbxassetid://122271132142798", secondary = "rbxassetid://83994660888462" },
             Black = { primary = "rbxassetid://122271132142798", secondary = "rbxassetid://122271132142798" },
             Devil = { primary = "rbxassetid://81551553428680", secondary = "rbxassetid://81551553428680" },
-            Ozean = { primary = "rbxassetid://138912737283012", secondary = "rbxassetid://138912737283012" }
+            Ozean = { primary = "rbxassetid://138912737283012", secondary = "rbxassetid://138912737283012" },
+            green = { primary = "rbxassetid://76213908980700", secondary =   "rbxassetid://76213908980700" }
         },
         GearSkins = {
             Black = "rbxassetid://122271132142798",
             Gold = "rbxassetid://102006781490148",
             Devil = "rbxassetid://81551553428680",
             Ozean = "rbxassetid://138912737283012",
-            Galaxy = "rbxassetid://122271132142798"
+            Galaxy = "rbxassetid://122271132142798",
+            green =  "rbxassetid://76213908980700"
         },
         CustomSounds = {
             Minecraft = "rbxassetid://8766809464",
