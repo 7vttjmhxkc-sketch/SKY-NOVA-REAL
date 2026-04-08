@@ -68,7 +68,7 @@ end
 -- Start
 StartAnimation()-- Sofortige Rückmeldung, da das Skript groß ist
 game:GetService("StarterGui"):SetCore("SendNotification", {
-    Title = "SKY NOVA - EARLY ACCESS",
+    Title = "SKY NOVA - MAIN SCRIPT",
     Text = "Großes Update wird geladen... bitte warten!",
     Duration = 10 -- Länger anzeigen, da viel geladen wird
 })
